@@ -7,14 +7,14 @@
     >
       <li
         class="AProductGridBox__Item"
-        v-for="product in products"
-        :key="product.erpNumber"
+        v-for="product in productsData"
+        :key="product.erp_number"
       >
         <div
           class="AProductGridBox__Item--wrapper"
         >
           <product-grid-box
-            :locale="product.locale"
+            :locale="product.product_info.locale"
             v-bind="product.data"
           />
         </div>
@@ -25,8 +25,19 @@
 
 <script>
 import ProductGridBox from '@mindshift/product-grid-box/dist/productGridBox.umd'
-import ApolloClient from 'apollo-boost'
-import productData from '../data/products.json'
+import gql from 'graphql-tag'
+
+const GET_PRODUCTS = gql`
+  query MyQuery {
+    productsData {
+    erp_number
+    data
+    product_info {
+      locale
+    }
+  }
+  }
+`
 
 export default {
   name: 'Product',
@@ -35,15 +46,18 @@ export default {
   },
   data () {
     return {
-      products: productData
+      productsData: [],
+      data: {}
+    }
+  },
+  apollo: {
+    productsData: {
+      query: GET_PRODUCTS
     }
   },
   created () {
-    const apolloClient = new ApolloClient({
-      // You should use an absolute URL here
-      uri: 'https://api.graphcms.com/simple/v1/awesomeTalksClone'
-    })
-    console.log(apolloClient)
+  },
+  mounted () {
   }
 }
 </script>
@@ -61,6 +75,7 @@ export default {
   width: 100%;
   padding: @m-distances-24 0;
   background-color: #204e47;
+  color: white;
 
   &__List {
     width: 100%;
