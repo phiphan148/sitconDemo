@@ -43,7 +43,6 @@ export default {
       // You should use an absolute URL here
       uri: 'https://api.graphcms.com/simple/v1/awesomeTalksClone'
     })
-    console.log(apolloClient)
   }
 }
 </script>
