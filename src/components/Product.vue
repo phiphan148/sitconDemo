@@ -7,7 +7,7 @@
     >
       <li
         class="AProductGridBox__Item"
-        v-for="product in productsData"
+        v-for="product in products_data"
         :key="product.erp_number"
       >
         <div
@@ -28,8 +28,8 @@ import ProductGridBox from '@mindshift/product-grid-box/dist/productGridBox.umd'
 import gql from 'graphql-tag'
 
 const GET_PRODUCTS = gql`
-  query MyQuery {
-    productsData {
+  query getProducts {
+    products_data {
     erp_number
     data
     product_info {
@@ -46,12 +46,12 @@ export default {
   },
   data () {
     return {
-      productsData: [],
+      products_data: [],
       data: {}
     }
   },
   apollo: {
-    productsData: {
+    products_data: {
       query: GET_PRODUCTS
     }
   },

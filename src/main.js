@@ -4,6 +4,11 @@ import router from './router'
 import { ApolloClient } from 'apollo-client'
 import { HttpLink } from 'apollo-link-http'
 import { InMemoryCache } from 'apollo-cache-inmemory'
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+
+// Import Bootstrap and BootstrapVue CSS files (order is important)
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 import VueApollo, { ApolloProvider } from 'vue-apollo'
 
@@ -23,6 +28,8 @@ const apolloClient = new ApolloClient({
 })
 
 Vue.use(VueApollo)
+Vue.use(BootstrapVue)
+Vue.use(IconsPlugin)
 
 const apolloProvider = new ApolloProvider({
   defaultClient: apolloClient
