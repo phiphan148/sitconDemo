@@ -14,7 +14,7 @@
           class="AProductGridBox__Item--wrapper"
         >
           <product-grid-box
-            :locale="product.product_info.locale"
+            :locale="product.info.locale"
             v-bind="product.data"
           />
         </div>
@@ -32,7 +32,7 @@ const GET_PRODUCTS = gql`
     products_data {
     erp_number
     data
-    product_info {
+    info {
       locale
     }
   }
