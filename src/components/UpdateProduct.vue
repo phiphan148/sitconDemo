@@ -1,79 +1,57 @@
 <template>
   <div class="update-product-wrapper">
-    <button type="button" class="collapsible" @click="collapse()">Add Product</button>
-    <div class="content">
-      <b-form class="update-product-form" @submit="onSubmit" @reset="onReset">
-        <b-form-group id="input-group-erpNumber" label="ErpNumber" label-for="input-erpNumber">
-          <b-form-input id="input-erpNumber" v-model="erp_number" placeholder="ErpNumber" required>
-          </b-form-input>
-        </b-form-group>
+    <div class="accordion update-product-form" role="tablist">
+      <b-card no-body class="mb-1">
+        <b-card-header header-tag="header" class="p-1" role="tab">
+          <b-button class="update-product-header" block v-b-toggle.create-product variant="primary">Create product</b-button>
+        </b-card-header>
+        <b-collapse id="create-product" visible accordion="my-accordion" role="tabpanel">
+          <b-card-body>
+            <b-form class="create-product-form" @submit="onSubmit" @reset="onReset">
+              <b-form-group id="input-group-erpNumber" label="ErpNumber" label-for="input-erpNumber">
+                <b-form-input id="input-erpNumber" v-model="erp_number" placeholder="ErpNumber" required>
+                </b-form-input>
+              </b-form-group>
 
-        <b-form-group id="input-group-name" label="Product Name" label-for="input-name">
-          <b-form-input id="input-name" v-model="name" type="text" placeholder="Name">
-          </b-form-input>
-        </b-form-group>
+              <b-form-group id="input-group-name" label="Product Name" label-for="input-name">
+                <b-form-input id="input-name" v-model="name" type="text" placeholder="Name">
+                </b-form-input>
+              </b-form-group>
 
-        <b-form-group id="input-group-locale" label="Locale" label-for="input-locale">
-          <b-form-input id="input-locale" v-model="locale" placeholder="Locale">
-          </b-form-input>
-        </b-form-group>
+              <b-form-group id="input-group-locale" label="Locale" label-for="input-locale">
+                <b-form-input id="input-locale" v-model="locale" placeholder="Locale">
+                </b-form-input>
+              </b-form-group>
 
-        <b-form-textarea id="product-data" v-model="data" placeholder="Product data" rows="2" max-rows="4">
-        </b-form-textarea>
+              <b-form-textarea id="product-data" v-model="data" placeholder="Product data" rows="2" max-rows="4">
+              </b-form-textarea>
 
-        <b-button type="submit" variant="primary">Add Product</b-button>
-        <b-button type="reset" variant="danger">Reset</b-button>
-      </b-form>
-    </div>
-    <button type="button" class="collapsible" @click="collapse()">Update Product</button>
-    <div class="content">
-      <b-form class="update-product-form" @submit="onSubmit" @reset="onReset">
-        <b-form-group id="input-group-erpNumber" label="ErpNumber" label-for="input-erpNumber">
-          <b-form-input id="input-erpNumber" v-model="erp_number" placeholder="ErpNumber" required>
-          </b-form-input>
-        </b-form-group>
+              <b-button type="submit" variant="primary">Add</b-button>
+              <b-button type="reset" variant="danger">Reset</b-button>
+            </b-form>
+          </b-card-body>
+        </b-collapse>
+      </b-card>
 
-        <b-form-group id="input-group-name" label="Product Name" label-for="input-name">
-          <b-form-input id="input-name" v-model="name" type="text" placeholder="Name">
-          </b-form-input>
-        </b-form-group>
+      <b-card no-body class="mb-1">
+        <b-card-header header-tag="header" class="p-1" role="tab">
+          <b-button class="update-product-header"  block v-b-toggle.update-product variant="primary">Update product</b-button>
+        </b-card-header>
+        <b-collapse id="update-product" accordion="my-accordion" role="tabpanel">
+          <b-card-body>
+          </b-card-body>
+        </b-collapse>
+      </b-card>
 
-        <b-form-group id="input-group-locale" label="Locale" label-for="input-locale">
-          <b-form-input id="input-locale" v-model="locale" placeholder="Locale">
-          </b-form-input>
-        </b-form-group>
-
-        <b-form-textarea id="product-data" v-model="data" placeholder="Product data" rows="2" max-rows="4">
-        </b-form-textarea>
-
-        <b-button type="submit" variant="primary">Add Product</b-button>
-        <b-button type="reset" variant="danger">Reset</b-button>
-      </b-form>
-    </div>
-    <button type="button" class="collapsible" @click="collapse()">Delete Product</button>
-    <div class="content">
-      <b-form class="update-product-form" @submit="onSubmit" @reset="onReset">
-        <b-form-group id="input-group-erpNumber" label="ErpNumber" label-for="input-erpNumber">
-          <b-form-input id="input-erpNumber" v-model="erp_number" placeholder="ErpNumber" required>
-          </b-form-input>
-        </b-form-group>
-
-        <b-form-group id="input-group-name" label="Product Name" label-for="input-name">
-          <b-form-input id="input-name" v-model="name" type="text" placeholder="Name">
-          </b-form-input>
-        </b-form-group>
-
-        <b-form-group id="input-group-locale" label="Locale" label-for="input-locale">
-          <b-form-input id="input-locale" v-model="locale" placeholder="Locale">
-          </b-form-input>
-        </b-form-group>
-
-        <b-form-textarea id="product-data" v-model="data" placeholder="Product data" rows="2" max-rows="4">
-        </b-form-textarea>
-
-        <b-button type="submit" variant="primary">Add Product</b-button>
-        <b-button type="reset" variant="danger">Reset</b-button>
-      </b-form>
+      <b-card no-body class="mb-1">
+        <b-card-header header-tag="header" class="p-1" role="tab">
+          <b-button class="update-product-header" block v-b-toggle.delete-product variant="primary">Delete product</b-button>
+        </b-card-header>
+        <b-collapse id="delete-product" accordion="my-accordion" role="tabpanel">
+          <b-card-body>
+          </b-card-body>
+        </b-collapse>
+      </b-card>
     </div>
     <div class="product-result-list">
       <li
@@ -167,23 +145,6 @@ export default {
     }
   },
   methods: {
-    collapse () {
-      let coll = document.getElementsByClassName('collapsible')
-      let i
-
-      for (i = 0; i < coll.length; i++) {
-        coll[i].addEventListener('click', function () {
-          this.classList.toggle('active')
-          const content = this.nextElementSibling
-          if (content.style.display === 'block') {
-            content.style.display = 'none'
-          } else {
-            content.style.display = 'block'
-          }
-        })
-      }
-    },
-
     onSubmit (e) {
       e.preventDefault()
       // eslint-disable-next-line camelcase
@@ -221,13 +182,21 @@ export default {
 @import "~@mindshift/cake-mindshift-core/src/styling_mixins.less";
 
 .update-product-wrapper {
+  text-align: left;
   padding: @m-distances-16;
 }
 
 .update-product-form {
-  width: 80%;
-  text-align: left;
+  width: 60%;
+}
 
+.update-product-header {
+  width: 100%;
+  color: white;
+  font-weight: bold;
+}
+
+.create-product-form {
   .form-group {
     margin-bottom: @m-distances-16;
   }
