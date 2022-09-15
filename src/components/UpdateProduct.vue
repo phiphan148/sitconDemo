@@ -1,6 +1,7 @@
 <template>
   <div class="update-product-wrapper">
     <div class="accordion update-product-form" role="tablist">
+      <!--        CREATE          -->
       <b-card no-body class="mb-1">
         <b-card-header header-tag="header" class="p-1" role="tab">
           <b-button class="update-product-header" block v-b-toggle.create-product variant="primary">Add product</b-button>
@@ -23,8 +24,10 @@
                 </b-form-input>
               </b-form-group>
 
-              <b-form-textarea id="product-create-data" v-model="data" placeholder="Product data" rows="2" max-rows="4">
-              </b-form-textarea>
+              <b-form-group id="input-create-data" label="Data" label-for="input-create-data">
+                <b-form-textarea id="product-create-data" v-model="data" placeholder="Product data" rows="2" max-rows="4">
+                </b-form-textarea>
+              </b-form-group>
 
               <b-button class="update-product-form-button" type="submit" variant="primary">Add</b-button>
               <b-button class="update-product-form-button" type="reset" variant="danger">Reset</b-button>
@@ -33,16 +36,47 @@
         </b-collapse>
       </b-card>
 
+      <!--        UPDATE          -->
       <b-card no-body class="mb-1">
         <b-card-header header-tag="header" class="p-1" role="tab">
           <b-button class="update-product-header"  block v-b-toggle.update-product variant="primary">Update product</b-button>
         </b-card-header>
         <b-collapse id="update-product" accordion="my-accordion" role="tabpanel">
           <b-card-body>
+            <b-form class="create-product-form" @submit.prevent="onUpdate" @reset.prevent="onReset">
+              <b-form-group id="input-update-id" label="ID" label-for="input-update-id">
+                <b-form-input id="input-update-id" v-model="id" placeholder="ID" required>
+                </b-form-input>
+              </b-form-group>
+
+              <b-form-group id="input-update-erpNumber" label="ErpNumber" label-for="input-update-erpNumber">
+                <b-form-input id="input-update-erpNumber" v-model="erp_number" placeholder="ErpNumber" required>
+                </b-form-input>
+              </b-form-group>
+
+              <b-form-group id="input-update-name" label="Product Name" label-for="input-update-name">
+                <b-form-input id="input-create-name" v-model="name" type="text" placeholder="Name">
+                </b-form-input>
+              </b-form-group>
+
+              <b-form-group id="input-update-locale" label="Locale" label-for="input-update-locale">
+                <b-form-input id="input-create-locale" v-model="locale" placeholder="Locale">
+                </b-form-input>
+              </b-form-group>
+
+              <b-form-group id="input-update-data" label="Data" label-for="input-update-data">
+                <b-form-textarea id="product-update-data" v-model="data" placeholder="Product data" rows="2" max-rows="4">
+                </b-form-textarea>
+              </b-form-group>
+
+              <b-button class="update-product-form-button" type="submit" variant="primary">Update</b-button>
+              <b-button class="update-product-form-button" type="reset" variant="danger">Reset</b-button>
+            </b-form>
           </b-card-body>
         </b-collapse>
       </b-card>
 
+      <!--        DELETE          -->
       <b-card no-body class="mb-1">
         <b-card-header header-tag="header" class="p-1" role="tab">
           <b-button class="update-product-header" block v-b-toggle.delete-product variant="primary">Delete product</b-button>
@@ -64,13 +98,14 @@
         </b-collapse>
       </b-card>
     </div>
+
     <div class="product-result-list">
       <li
         class="product-item"
-        v-for="(product, idx) in products_data.slice().reverse()"
+        v-for="(product, idx) in sortData(products_data)"
         :key="idx"
       >
-        <p><strong>PRODUCT {{ product.id }}:</strong></p>
+        <p><strong>PRODUCT ID: {{ product.id }}</strong></p>
         <p>Erp_number: {{ product.erp_number }}, Name: {{ product.info.name }}, Locale: {{ product.info.locale }}</p>
         <article class="product-item-data">Data: {{ product.data }}</article>
       </li>
@@ -80,7 +115,7 @@
 
 <script>
 import ProductGridBox from '@mindshift/product-grid-box/dist/productGridBox.umd'
-import { GET_PRODUCTS, ADD_PRODUCT, DELETE_PRODUCT } from '../service/ActionOnProduct'
+import { GET_PRODUCTS, ADD_PRODUCT, DELETE_PRODUCT, UPDATE_PRODUCT } from '../service/ActionOnProduct'
 
 export default {
   name: 'UpdateProduct',
@@ -103,12 +138,30 @@ export default {
     }
   },
   methods: {
+    sortData (myArray) {
+      return myArray.slice().sort((a, b) => b.id - a.id)
+    },
     onSubmit () {
       // eslint-disable-next-line camelcase
       const {name, erp_number, locale, data} = this.$data
       this.$apollo.mutate({
         mutation: ADD_PRODUCT,
         variables: {
+          name,
+          erp_number,
+          locale,
+          data
+        },
+        refetchQueries: ['getProducts']
+      })
+    },
+    onUpdate () {
+      // eslint-disable-next-line camelcase
+      const {id, name, erp_number, locale, data} = this.$data
+      this.$apollo.mutate({
+        mutation: UPDATE_PRODUCT,
+        variables: {
+          id,
           name,
           erp_number,
           locale,

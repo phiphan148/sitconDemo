@@ -54,6 +54,28 @@ export const ADD_PRODUCT = gql`
   }
 `
 
+export const UPDATE_PRODUCT = gql`
+ mutation updateProduct(
+    $id: Int!
+    $name: String!
+    $erp_number: Int!
+    $locale: String!
+    $data: jsonb!
+  ) {
+  update_products_data(where: {erp_number: {_eq: $erp_number}, _and: {id: {_eq: $id}}}, _set: {data: $data}) {
+    returning {
+      id
+    }
+  }
+  update_products(where: {erp_number: {_eq: $erp_number}}, _set: {name: $name, locale: $locale}) {
+    returning {
+      id
+      name
+    }
+  }
+ }
+`
+
 export const DELETE_PRODUCT = gql`
   mutation deleteProduct(
     $id: Int!

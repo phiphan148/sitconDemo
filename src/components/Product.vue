@@ -25,19 +25,7 @@
 
 <script>
 import ProductGridBox from '@mindshift/product-grid-box/dist/productGridBox.umd'
-import gql from 'graphql-tag'
-
-const GET_PRODUCTS = gql`
-  query getProducts {
-    products_data {
-    erp_number
-    data
-    info {
-      locale
-    }
-  }
-  }
-`
+import { GET_PRODUCTS } from '../service/ActionOnProduct'
 
 export default {
   name: 'Product',
@@ -54,10 +42,6 @@ export default {
     products_data: {
       query: GET_PRODUCTS
     }
-  },
-  created () {
-  },
-  mounted () {
   }
 }
 </script>
