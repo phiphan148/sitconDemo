@@ -1,27 +1,80 @@
 <template>
   <div class="update-product-wrapper">
-    <b-form class="update-product-form" @submit="onSubmit" @reset="onReset">
-      <b-form-group id="input-group-erpNumber" label="ErpNumber" label-for="input-erpNumber">
-        <b-form-input id="input-erpNumber" v-model="erp_number" placeholder="ErpNumber" required>
-        </b-form-input>
-      </b-form-group>
+    <button type="button" class="collapsible" @click="collapse()">Add Product</button>
+    <div class="content">
+      <b-form class="update-product-form" @submit="onSubmit" @reset="onReset">
+        <b-form-group id="input-group-erpNumber" label="ErpNumber" label-for="input-erpNumber">
+          <b-form-input id="input-erpNumber" v-model="erp_number" placeholder="ErpNumber" required>
+          </b-form-input>
+        </b-form-group>
 
-      <b-form-group id="input-group-name" label="Product Name" label-for="input-name">
-        <b-form-input id="input-name" v-model="name" type="text" placeholder="Name">
-        </b-form-input>
-      </b-form-group>
+        <b-form-group id="input-group-name" label="Product Name" label-for="input-name">
+          <b-form-input id="input-name" v-model="name" type="text" placeholder="Name">
+          </b-form-input>
+        </b-form-group>
 
-      <b-form-group id="input-group-locale" label="Locale" label-for="input-locale">
-        <b-form-input id="input-locale" v-model="locale" placeholder="Locale">
-        </b-form-input>
-      </b-form-group>
+        <b-form-group id="input-group-locale" label="Locale" label-for="input-locale">
+          <b-form-input id="input-locale" v-model="locale" placeholder="Locale">
+          </b-form-input>
+        </b-form-group>
 
-      <b-form-textarea id="product-data" v-model="data" placeholder="Product data" rows="2" max-rows="4">
-      </b-form-textarea>
+        <b-form-textarea id="product-data" v-model="data" placeholder="Product data" rows="2" max-rows="4">
+        </b-form-textarea>
 
-      <b-button type="submit" variant="primary">Add Product</b-button>
-      <b-button type="reset" variant="danger">Reset</b-button>
-    </b-form>
+        <b-button type="submit" variant="primary">Add Product</b-button>
+        <b-button type="reset" variant="danger">Reset</b-button>
+      </b-form>
+    </div>
+    <button type="button" class="collapsible" @click="collapse()">Update Product</button>
+    <div class="content">
+      <b-form class="update-product-form" @submit="onSubmit" @reset="onReset">
+        <b-form-group id="input-group-erpNumber" label="ErpNumber" label-for="input-erpNumber">
+          <b-form-input id="input-erpNumber" v-model="erp_number" placeholder="ErpNumber" required>
+          </b-form-input>
+        </b-form-group>
+
+        <b-form-group id="input-group-name" label="Product Name" label-for="input-name">
+          <b-form-input id="input-name" v-model="name" type="text" placeholder="Name">
+          </b-form-input>
+        </b-form-group>
+
+        <b-form-group id="input-group-locale" label="Locale" label-for="input-locale">
+          <b-form-input id="input-locale" v-model="locale" placeholder="Locale">
+          </b-form-input>
+        </b-form-group>
+
+        <b-form-textarea id="product-data" v-model="data" placeholder="Product data" rows="2" max-rows="4">
+        </b-form-textarea>
+
+        <b-button type="submit" variant="primary">Add Product</b-button>
+        <b-button type="reset" variant="danger">Reset</b-button>
+      </b-form>
+    </div>
+    <button type="button" class="collapsible" @click="collapse()">Delete Product</button>
+    <div class="content">
+      <b-form class="update-product-form" @submit="onSubmit" @reset="onReset">
+        <b-form-group id="input-group-erpNumber" label="ErpNumber" label-for="input-erpNumber">
+          <b-form-input id="input-erpNumber" v-model="erp_number" placeholder="ErpNumber" required>
+          </b-form-input>
+        </b-form-group>
+
+        <b-form-group id="input-group-name" label="Product Name" label-for="input-name">
+          <b-form-input id="input-name" v-model="name" type="text" placeholder="Name">
+          </b-form-input>
+        </b-form-group>
+
+        <b-form-group id="input-group-locale" label="Locale" label-for="input-locale">
+          <b-form-input id="input-locale" v-model="locale" placeholder="Locale">
+          </b-form-input>
+        </b-form-group>
+
+        <b-form-textarea id="product-data" v-model="data" placeholder="Product data" rows="2" max-rows="4">
+        </b-form-textarea>
+
+        <b-button type="submit" variant="primary">Add Product</b-button>
+        <b-button type="reset" variant="danger">Reset</b-button>
+      </b-form>
+    </div>
     <div class="product-result-list">
       <li
         class="product-item"
@@ -114,6 +167,23 @@ export default {
     }
   },
   methods: {
+    collapse () {
+      let coll = document.getElementsByClassName('collapsible')
+      let i
+
+      for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener('click', function () {
+          this.classList.toggle('active')
+          const content = this.nextElementSibling
+          if (content.style.display === 'block') {
+            content.style.display = 'none'
+          } else {
+            content.style.display = 'block'
+          }
+        })
+      }
+    },
+
     onSubmit (e) {
       e.preventDefault()
       // eslint-disable-next-line camelcase
@@ -190,5 +260,28 @@ export default {
   -webkit-line-clamp: 2; /* number of lines to show */
   line-clamp: 2;
   -webkit-box-orient: vertical;
+}
+
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
 }
 </style>
