@@ -3,31 +3,31 @@
     <div class="accordion update-product-form" role="tablist">
       <b-card no-body class="mb-1">
         <b-card-header header-tag="header" class="p-1" role="tab">
-          <b-button class="update-product-header" block v-b-toggle.create-product variant="primary">Create product</b-button>
+          <b-button class="update-product-header" block v-b-toggle.create-product variant="primary">Add product</b-button>
         </b-card-header>
         <b-collapse id="create-product" visible accordion="my-accordion" role="tabpanel">
           <b-card-body>
-            <b-form class="create-product-form" @submit="onSubmit" @reset="onReset">
-              <b-form-group id="input-group-erpNumber" label="ErpNumber" label-for="input-erpNumber">
-                <b-form-input id="input-erpNumber" v-model="erp_number" placeholder="ErpNumber" required>
+            <b-form class="create-product-form" @submit.prevent="onSubmit" @reset.prevent="onReset">
+              <b-form-group id="input-create-erpNumber" label="ErpNumber" label-for="input-create-erpNumber">
+                <b-form-input id="input-create-erpNumber" v-model="erp_number" placeholder="ErpNumber" required>
                 </b-form-input>
               </b-form-group>
 
-              <b-form-group id="input-group-name" label="Product Name" label-for="input-name">
-                <b-form-input id="input-name" v-model="name" type="text" placeholder="Name">
+              <b-form-group id="input-create-name" label="Product Name" label-for="input-create-name">
+                <b-form-input id="input-create-name" v-model="name" type="text" placeholder="Name">
                 </b-form-input>
               </b-form-group>
 
-              <b-form-group id="input-group-locale" label="Locale" label-for="input-locale">
-                <b-form-input id="input-locale" v-model="locale" placeholder="Locale">
+              <b-form-group id="input-create-locale" label="Locale" label-for="input-create-locale">
+                <b-form-input id="input-create-locale" v-model="locale" placeholder="Locale">
                 </b-form-input>
               </b-form-group>
 
-              <b-form-textarea id="product-data" v-model="data" placeholder="Product data" rows="2" max-rows="4">
+              <b-form-textarea id="product-create-data" v-model="data" placeholder="Product data" rows="2" max-rows="4">
               </b-form-textarea>
 
-              <b-button type="submit" variant="primary">Add</b-button>
-              <b-button type="reset" variant="danger">Reset</b-button>
+              <b-button class="update-product-form-button" type="submit" variant="primary">Add</b-button>
+              <b-button class="update-product-form-button" type="reset" variant="danger">Reset</b-button>
             </b-form>
           </b-card-body>
         </b-collapse>
@@ -49,6 +49,17 @@
         </b-card-header>
         <b-collapse id="delete-product" accordion="my-accordion" role="tabpanel">
           <b-card-body>
+            <b-form class="delete-product-form">
+              <b-form-group id="input-delete-erpNumber" label="ErpNumber" label-for="input-delete-erpNumber">
+                <b-form-input id="input-delete-erpNumber" v-model="erp_number" placeholder="ErpNumber" required>
+                </b-form-input>
+              </b-form-group>
+              <b-form-group id="input-delete-id" label="Product ID" label-for="input-delete-id">
+                <b-form-input id="input-delete-id" v-model="id" placeholder="Product ID" required>
+                </b-form-input>
+              </b-form-group>
+              <b-button class="update-product-form-button" @click="onDelete" type="delete" variant="danger">Delete</b-button>
+            </b-form>
           </b-card-body>
         </b-collapse>
       </b-card>
@@ -69,61 +80,7 @@
 
 <script>
 import ProductGridBox from '@mindshift/product-grid-box/dist/productGridBox.umd'
-import gql from 'graphql-tag'
-
-const GET_PRODUCTS = gql`
-  query getProducts {
-    products_data {
-    id
-    erp_number
-    data
-     info {
-      name
-      locale
-    }
-  }
-  }
-`
-
-const ADD_PRODUCT = gql`
-  mutation updateProduct(
-    $name: String!
-    $erp_number: Int!
-    $locale: String!
-    $data: jsonb!
-  ) {
-    insert_products(
-      objects: [
-        {
-          name: $name
-          erp_number: $erp_number
-          locale: $locale
-        }
-      ]
-    ) {
-      returning {
-        id
-        name
-        erp_number
-        locale
-      }
-    }
-
-    insert_products_data(
-      objects: [
-        {
-          erp_number: $erp_number
-          data: $data
-        }
-      ]
-    ) {
-      returning {
-        id
-        erp_number
-      }
-    }
-  }
-`
+import { GET_PRODUCTS, ADD_PRODUCT, DELETE_PRODUCT } from '../service/ActionOnProduct'
 
 export default {
   name: 'UpdateProduct',
@@ -132,6 +89,7 @@ export default {
   },
   data () {
     return {
+      id: '',
       name: '',
       erp_number: '',
       locale: '',
@@ -145,8 +103,7 @@ export default {
     }
   },
   methods: {
-    onSubmit (e) {
-      e.preventDefault()
+    onSubmit () {
       // eslint-disable-next-line camelcase
       const {name, erp_number, locale, data} = this.$data
       this.$apollo.mutate({
@@ -157,17 +114,28 @@ export default {
           locale,
           data
         },
-        refetchQueries: ['MyQuery']
+        refetchQueries: ['getProducts']
       })
     },
 
-    onReset (event) {
-      event.preventDefault()
-      // Reset our form values
+    onReset () {
       this.erp_number = ''
       this.name = ''
       this.locale = ''
       this.data = ''
+    },
+
+    onDelete () {
+      // eslint-disable-next-line camelcase
+      const {erp_number, id} = this.$data
+      this.$apollo.mutate({
+        mutation: DELETE_PRODUCT,
+        variables: {
+          erp_number,
+          id
+        },
+        refetchQueries: ['getProducts']
+      })
     }
   }
 }
@@ -188,6 +156,10 @@ export default {
 
 .update-product-form {
   width: 60%;
+
+  &-button {
+    margin: @m-distances-16 0;
+  }
 }
 
 .update-product-header {
@@ -229,28 +201,5 @@ export default {
   -webkit-line-clamp: 2; /* number of lines to show */
   line-clamp: 2;
   -webkit-box-orient: vertical;
-}
-
-.collapsible {
-  background-color: #777;
-  color: white;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-
-.active, .collapsible:hover {
-  background-color: #555;
-}
-
-.content {
-  padding: 0 18px;
-  display: none;
-  overflow: hidden;
-  background-color: #f1f1f1;
 }
 </style>
