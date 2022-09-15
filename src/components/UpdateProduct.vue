@@ -141,6 +141,14 @@ export default {
     sortData (myArray) {
       return myArray.slice().sort((a, b) => b.id - a.id)
     },
+    makeToast (variant = null, message) {
+      this.$bvToast.toast(message, {
+        title: `Variant ${variant || 'default'}`,
+        variant: variant,
+        autoHideDelay: 5000,
+        solid: true
+      })
+    },
     onSubmit () {
       // eslint-disable-next-line camelcase
       const {name, erp_number, locale, data} = this.$data
@@ -153,22 +161,48 @@ export default {
           data
         },
         refetchQueries: ['getProducts']
-      })
+      }).then(
+        result => {
+          this.makeToast('success', 'Product ' + result.data.insert_products.returning[0].erp_number + ' is added')
+        },
+        error => {
+          this.makeToast('danger', error.message)
+        }
+      )
     },
     onUpdate () {
       // eslint-disable-next-line camelcase
-      const {id, name, erp_number, locale, data} = this.$data
-      this.$apollo.mutate({
-        mutation: UPDATE_PRODUCT,
-        variables: {
-          id,
-          name,
-          erp_number,
-          locale,
-          data
-        },
-        refetchQueries: ['getProducts']
-      })
+      let {id, erp_number, name, locale, data} = this.$data
+      if (name === '') {
+        name = this.getDataForFieldName(id, 'name')
+      }
+      if (data === '') {
+        data = this.getDataForFieldName(id, 'data')
+      }
+      // eslint-disable-next-line camelcase
+      const checkValidErpNumber = this.products_data.some(product => product.id.toString() === id && product.erp_number.toString() === erp_number)
+      if (checkValidErpNumber) {
+        this.$apollo.mutate({
+          mutation: UPDATE_PRODUCT,
+          variables: {
+            id,
+            name,
+            erp_number,
+            locale,
+            data
+          },
+          refetchQueries: ['getProducts']
+        }).then(
+          result => {
+            this.makeToast('success', 'Product ' + result.data.update_products.returning[0].erp_number + ' is updated')
+          },
+          error => {
+            this.makeToast('danger', error.message)
+          }
+        )
+      } else {
+        this.makeToast('danger', 'The erpNumber does not belong to this ID')
+      }
     },
 
     onReset () {
@@ -189,6 +223,14 @@ export default {
         },
         refetchQueries: ['getProducts']
       })
+    },
+
+    getDataForFieldName (id, fieldName) {
+      const updatedProduct = this.products_data.find(product => product.id.toString() === id)
+      if (updatedProduct) {
+        return fieldName === 'data' ? updatedProduct[fieldName] : updatedProduct.info[fieldName]
+      }
+      return ''
     }
   }
 }

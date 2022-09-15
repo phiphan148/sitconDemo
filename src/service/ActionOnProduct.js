@@ -62,7 +62,7 @@ export const UPDATE_PRODUCT = gql`
     $locale: String!
     $data: jsonb!
   ) {
-  update_products_data(where: {erp_number: {_eq: $erp_number}, _and: {id: {_eq: $id}}}, _set: {data: $data}) {
+  update_products_data(where: {erp_number: {_eq: $erp_number}, info: {erp_number: {_eq: $erp_number}}, _and: {id: {_eq: $id}}}, _set: {data: $data}) {
     returning {
       id
     }
@@ -70,7 +70,7 @@ export const UPDATE_PRODUCT = gql`
   update_products(where: {erp_number: {_eq: $erp_number}}, _set: {name: $name, locale: $locale}) {
     returning {
       id
-      name
+      erp_number
     }
   }
  }
