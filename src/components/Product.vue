@@ -83,12 +83,13 @@ export default {
     padding: 0;
 
     @media (min-width: @m-breakpoints-sm) {
-      width: calc(50% - @m-distances-24);
+      width: 50%;
       padding: @m-distances-8 @m-distances-16 @m-distances-8 0;
     }
 
     @media (min-width: @m-breakpoints-md) {
-      width: calc(25% - @m-distances-24);
+      width: 25%;
+      padding: @m-distances-8 @m-distances-24 @m-distances-8 0;
     }
   }
 }

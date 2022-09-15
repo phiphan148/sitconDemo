@@ -84,12 +84,12 @@
         <b-collapse id="delete-product" accordion="my-accordion" role="tabpanel">
           <b-card-body>
             <b-form class="delete-product-form">
-              <b-form-group id="input-delete-erpNumber" label="ErpNumber" label-for="input-delete-erpNumber">
-                <b-form-input id="input-delete-erpNumber" v-model="erp_number" placeholder="ErpNumber" required>
-                </b-form-input>
-              </b-form-group>
               <b-form-group id="input-delete-id" label="Product ID" label-for="input-delete-id">
                 <b-form-input id="input-delete-id" v-model="id" placeholder="Product ID" required>
+                </b-form-input>
+              </b-form-group>
+              <b-form-group id="input-delete-erpNumber" label="ErpNumber" label-for="input-delete-erpNumber">
+                <b-form-input id="input-delete-erpNumber" v-model="erp_number" placeholder="ErpNumber" required>
                 </b-form-input>
               </b-form-group>
               <b-button class="update-product-form-button" @click="onDelete" type="delete" variant="danger">Delete</b-button>
@@ -149,6 +149,9 @@ export default {
         solid: true
       })
     },
+    checkValidProduct (id, erpNumber) {
+      return this.products_data.some(product => product.id.toString() === id && product.erp_number.toString() === erpNumber)
+    },
     onSubmit () {
       // eslint-disable-next-line camelcase
       const {name, erp_number, locale, data} = this.$data
@@ -180,7 +183,7 @@ export default {
         data = this.getDataForFieldName(id, 'data')
       }
       // eslint-disable-next-line camelcase
-      const checkValidErpNumber = this.products_data.some(product => product.id.toString() === id && product.erp_number.toString() === erp_number)
+      const checkValidErpNumber = this.checkValidProduct(id, erp_number)
       if (checkValidErpNumber) {
         this.$apollo.mutate({
           mutation: UPDATE_PRODUCT,
@@ -215,14 +218,27 @@ export default {
     onDelete () {
       // eslint-disable-next-line camelcase
       const {erp_number, id} = this.$data
-      this.$apollo.mutate({
-        mutation: DELETE_PRODUCT,
-        variables: {
-          erp_number,
-          id
-        },
-        refetchQueries: ['getProducts']
-      })
+      // eslint-disable-next-line camelcase
+      const checkValidErpNumber = this.checkValidProduct(id, erp_number)
+      if (checkValidErpNumber) {
+        this.$apollo.mutate({
+          mutation: DELETE_PRODUCT,
+          variables: {
+            erp_number,
+            id
+          },
+          refetchQueries: ['getProducts']
+        }).then(
+          result => {
+            this.makeToast('success', 'Product ID ' + result.data.delete_products_data.returning[0].id + ' is deleted')
+          },
+          error => {
+            this.makeToast('danger', error.message)
+          }
+        )
+      } else {
+        this.makeToast('danger', 'The erpNumber does not belong to this ID')
+      }
     },
 
     getDataForFieldName (id, fieldName) {
