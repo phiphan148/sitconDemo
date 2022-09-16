@@ -4,7 +4,8 @@
       <!--        CREATE          -->
       <b-card no-body class="mb-1">
         <b-card-header @click="onReset" header-tag="header" class="p-1" role="tab">
-          <b-button class="update-product-header" block v-b-toggle.create-product variant="primary">Add product</b-button>
+          <b-button class="update-product-header" block v-b-toggle.create-product variant="primary">Add product
+          </b-button>
         </b-card-header>
         <b-collapse id="create-product" visible accordion="my-accordion" role="tabpanel">
           <b-card-body>
@@ -20,7 +21,8 @@
               </b-form-group>
 
               <b-form-group id="input-create-data" label="Data" label-for="input-create-data">
-                <b-form-textarea id="product-create-data" v-model="data" placeholder="Product data" rows="2" max-rows="4">
+                <b-form-textarea id="product-create-data" v-model="data" placeholder="Product data" rows="2"
+                                 max-rows="4">
                 </b-form-textarea>
               </b-form-group>
 
@@ -34,7 +36,8 @@
       <!--        UPDATE          -->
       <b-card no-body class="mb-1">
         <b-card-header @click="onReset" header-tag="header" class="p-1" role="tab">
-          <b-button class="update-product-header"  block v-b-toggle.update-product variant="primary">Update product</b-button>
+          <b-button class="update-product-header" block v-b-toggle.update-product variant="primary">Update product
+          </b-button>
         </b-card-header>
         <b-collapse id="update-product" accordion="my-accordion" role="tabpanel">
           <b-card-body>
@@ -55,7 +58,8 @@
               </b-form-group>
 
               <b-form-group id="input-update-data" label="Data" label-for="input-update-data">
-                <b-form-textarea id="product-update-data" v-model="data" placeholder="Product data" rows="2" max-rows="4">
+                <b-form-textarea id="product-update-data" v-model="data" placeholder="Product data" rows="2"
+                                 max-rows="4">
                 </b-form-textarea>
               </b-form-group>
 
@@ -69,7 +73,8 @@
       <!--        DELETE          -->
       <b-card no-body class="mb-1">
         <b-card-header @click="onReset" header-tag="header" class="p-1" role="tab">
-          <b-button class="update-product-header" block v-b-toggle.delete-product variant="primary">Delete product</b-button>
+          <b-button class="update-product-header" block v-b-toggle.delete-product variant="primary">Delete product
+          </b-button>
         </b-card-header>
         <b-collapse id="delete-product" accordion="my-accordion" role="tabpanel">
           <b-card-body>
@@ -82,35 +87,26 @@
                 <b-form-input id="input-delete-erpNumber" v-model="erp_number" placeholder="ErpNumber" required>
                 </b-form-input>
               </b-form-group>
-              <b-button class="update-product-form-button" @click="onDelete" type="delete" variant="danger">Delete</b-button>
+              <b-button class="update-product-form-button" @click="onDelete" type="delete" variant="danger">Delete
+              </b-button>
             </b-form>
           </b-card-body>
         </b-collapse>
       </b-card>
     </div>
 
-    <div class="product-result-list">
-      <li
-        class="product-item"
-        v-for="(product, idx) in sortData(products_data)"
-        :key="idx"
-      >
-        <p><strong>PRODUCT ID: {{ product.id }}</strong></p>
-        <p>Erp_number: {{ product.erp_number }}, Name: {{ product.info.name }}</p>
-        <article class="product-item-data">Data: {{ product.data }}</article>
-      </li>
-    </div>
+    <UpdateProductLayout :products-data="products_data"></UpdateProductLayout>
   </div>
 </template>
 
 <script>
-import ProductGridBox from '@mindshift/product-grid-box/dist/productGridBox.umd'
-import { GET_PRODUCTS, ADD_PRODUCT, DELETE_PRODUCT, UPDATE_PRODUCT } from '../service/ActionOnProduct'
+import {GET_PRODUCTS, ADD_PRODUCT, DELETE_PRODUCT, UPDATE_PRODUCT} from '../service/ActionOnProduct'
+import UpdateProductLayout from './UpdateProductLayout.vue'
 
 export default {
   name: 'UpdateProduct',
   components: {
-    ProductGridBox
+    UpdateProductLayout
   },
   data () {
     return {
@@ -248,10 +244,6 @@ export default {
 }
 </script>
 
-<style>
-@import "../../node_modules/@mindshift/product-grid-box/dist/productGridBox.css";
-</style>
-
 <style lang="less" scoped>
 @import "~@mindshift/cake-mindshift-core/src/variables.less";
 @import "~@mindshift/cake-mindshift-core/src/styling_mixins.less";
@@ -290,15 +282,19 @@ export default {
   margin: @m-distances-16 0;
   text-align: left;
   line-height: @m-distances-24;
+  display: flex;
+  flex-wrap: wrap;
+  gap: @m-distances-16;
 
   li {
     list-style: none;
     margin-bottom: @m-distances-16;
   }
-   p {
-     margin: 0;
-     padding: 0;
-   }
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .product-item-data {

@@ -96,14 +96,6 @@ export default {
     margin-bottom: @m-distances-16;
   }
 
-  &-title {
-    width: @m-distances-256;
-    height: @m-distances-24;
-    border-radius: 2px;
-    margin-left: @m-distances-8;
-    margin-bottom: @m-distances-16;
-  }
-
   &-text {
     width: @m-distances-200;
     height: @m-distances-16;

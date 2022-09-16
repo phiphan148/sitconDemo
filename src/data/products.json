@@ -1,25 +1,27 @@
 [
   {
+    "locale": "de_DE",
+    "erpNumber": 159908,
+    "name": "Chef Select Feine Küche Pizza",
     "data": {
-      "canonicalPath": "/p/singer-freiarm-naehmaschine-tradition-2282/p290564",
+      "canonicalPath": "/p/chef-select-feine-kuche-pizza-rettangolare/p159908",
       "havingPrice": true,
       "keyfacts": {
-        "title": "Ein klasse Lidl Produkt",
-        "supplementalDescription":
-        "Mit vielen tollen Features und zu einem supergünstigen Preis!!",
+        "title": "Chef Select Feine Küche Pizza",
+        "supplementalDescription": "Mit vielen tollen Features und zu einem supergünstigen Preis!!",
         "moreDetails": "Wichtige Produktinformationen"
       },
       "ratings": {
         "average": 4,
-        "count": 35,
+        "count": 23,
         "topRated": true,
         "text": "TOP KUNDENBEWERTUNGEN"
       },
-      "image": "https://picsum.photos/g/400/300?random",
+      "image": "https://de-assets-test.retail.vdc.lidl/catalog5media/de/article/159908/gallery/preview/xs/159908_33.jpg",
       "specialDesc": "0% Finanzierung",
       "gridLabel": "Stiftung Warentest - 17QL71",
       "price": {
-        "price": 99.99,
+        "price": 10.23,
         "hasStar": true,
         "showFrom": false,
         "discount": {
@@ -28,8 +30,8 @@
           "showPercentage": true,
           "showUpTo": false,
           "fromRecommendedPrice": true,
-          "deletedPrice": 349.0,
-          "percentageDiscount": 71
+          "deletedPrice": 15,
+          "percentageDiscount": 33
         },
         "packaging": {
           "amount": 100,
@@ -66,10 +68,8 @@
         "onlineAvailable": true
       },
       "category": "Weinwelt / Weinart / Champagner, Sekt & Secco /",
-      "queryParams":
-      "param1=parameter1&amp;param2=parameter2&amp;param3=parameter3",
-      "hashParams":
-      "searchTrackingQuery=*&amp;searchTrackingPageSize=36&amp;searchTrackingOrigPageSize=36",
+      "queryParams": "param1=parameter1&amp;param2=parameter2&amp;param3=parameter3",
+      "hashParams": "searchTrackingQuery=*&amp;searchTrackingPageSize=36&amp;searchTrackingOrigPageSize=36",
       "list": "Baumarkt/Garten & Grillen/Gartengeräte & Gartenwerkzeuge/Weitere Gartengeräte",
       "preCacheConfig": {
         "type": "prefetch",
@@ -82,33 +82,393 @@
       },
       "productType": "FLAT",
       "ribbons": [
-        {"type": "FREE_DELIVERY", "text": "Versandkostenfrei"}
+        {
+          "type": "FREE_DELIVERY",
+          "text": "Versandkostenfrei"
+        }
       ]
-    },
+    }
+  },
+  {
     "locale": "de_DE",
-    "erpNumber": 290564
+    "erpNumber": 103013183,
+    "Name": "Single article 1 WH AT SC06",
+    "data": {
+      "canonicalPath": "/p/2jewels-test-single-article-1-wh-at-sc06/p103013183",
+      "havingPrice": true,
+      "keyfacts": {
+        "title": "Single article 1 WH AT SC06",
+        "supplementalDescription": "Mit vielen tollen Features und zu einem supergünstigen Preis!!",
+        "moreDetails": "Wichtige Produktinformationen"
+      },
+      "ratings": {
+        "average": 4,
+        "count": 23,
+        "topRated": true,
+        "text": "TOP KUNDENBEWERTUNGEN"
+      },
+      "image": "https://qa.lidl.de/assets/611586062f149d9c0216a3e98cf10940.jpeg",
+      "specialDesc": "0% Finanzierung",
+      "gridLabel": "Stiftung Warentest - 17QL71",
+      "price": {
+        "price": 25,
+        "hasStar": true,
+        "showFrom": false,
+        "discount": {
+          "showDiscount": true,
+          "showFrom": false,
+          "showPercentage": true,
+          "showUpTo": false,
+          "fromRecommendedPrice": true,
+          "deletedPrice": 25.03,
+          "percentageDiscount": 3
+        },
+        "packaging": {
+          "amount": 100,
+          "unit": "ml",
+          "multiplicator": 1,
+          "type": "",
+          "text": ""
+        },
+        "basePrice": {
+          "amount": 1,
+          "prefix": false,
+          "price": 9999,
+          "unit": "l"
+        }
+      },
+      "havingVariablePrices": true,
+      "havingVideos": true,
+      "havingThreesixty": true,
+      "renderedTs": 1546603467,
+      "stockAvailability": {
+        "availabilityIndicator": 3,
+        "badgeInfo": {
+          "badges": [
+            {
+              "text": "Online demnächst verfügbar",
+              "type": "AVAILABLE_ONLINE"
+            },
+            {
+              "text": "In der Filiale",
+              "type": "IN_STORE"
+            }
+          ]
+        },
+        "onlineAvailable": true
+      },
+      "category": "Weinwelt / Weinart / Champagner, Sekt & Secco /",
+      "queryParams": "param1=parameter1&amp;param2=parameter2&amp;param3=parameter3",
+      "hashParams": "searchTrackingQuery=*&amp;searchTrackingPageSize=36&amp;searchTrackingOrigPageSize=36",
+      "list": "Baumarkt/Garten & Grillen/Gartengeräte & Gartenwerkzeuge/Weitere Gartengeräte",
+      "preCacheConfig": {
+        "type": "prefetch",
+        "method": "onhover"
+      },
+      "brand": {
+        "name": "LEGO",
+        "logo": "lego.png",
+        "url": "lego.com"
+      },
+      "productType": "FLAT",
+      "ribbons": [
+        {
+          "type": "FREE_DELIVERY",
+          "text": "Versandkostenfrei"
+        }
+      ]
+    }
+  },
+  {
+    "locale": "de_DE",
+    "erpNumber": 103012654,
+    "Name": "Erben Scheurebe QbA lieblich",
+    "data": {
+      "canonicalPath": "/p/erben-scheurebe-qba-lieblich-weisswein/p103012654",
+      "havingPrice": true,
+      "keyfacts": {
+        "title": "Erben Scheurebe QbA lieblich",
+        "supplementalDescription": "Mit vielen tollen Features und zu einem supergünstigen Preis!!",
+        "moreDetails": "Wichtige Produktinformationen"
+      },
+      "ratings": {
+        "average": 4,
+        "count": 23,
+        "topRated": true,
+        "text": "TOP KUNDENBEWERTUNGEN"
+      },
+      "image": "https://qa.lidl.de/assets/f4e547e403c8597117182ed9458d30f1.jpeg",
+      "specialDesc": "0% Finanzierung",
+      "gridLabel": "Stiftung Warentest - 17QL71",
+      "price": {
+        "price": 59,
+        "hasStar": true,
+        "showFrom": false,
+        "discount": {
+          "showDiscount": true,
+          "showFrom": false,
+          "showPercentage": true,
+          "showUpTo": false,
+          "fromRecommendedPrice": true,
+          "deletedPrice": 59.05,
+          "percentageDiscount": 5
+        },
+        "packaging": {
+          "amount": 100,
+          "unit": "ml",
+          "multiplicator": 1,
+          "type": "",
+          "text": ""
+        },
+        "basePrice": {
+          "amount": 1,
+          "prefix": false,
+          "price": 9999,
+          "unit": "l"
+        }
+      },
+      "havingVariablePrices": true,
+      "havingVideos": true,
+      "havingThreesixty": true,
+      "renderedTs": 1546603467,
+      "stockAvailability": {
+        "availabilityIndicator": 3,
+        "badgeInfo": {
+          "badges": [
+            {
+              "text": "Online demnächst verfügbar",
+              "type": "AVAILABLE_ONLINE"
+            },
+            {
+              "text": "In der Filiale",
+              "type": "IN_STORE"
+            }
+          ]
+        },
+        "onlineAvailable": true
+      },
+      "category": "Weinwelt / Weinart / Champagner, Sekt & Secco /",
+      "queryParams": "param1=parameter1&amp;param2=parameter2&amp;param3=parameter3",
+      "hashParams": "searchTrackingQuery=*&amp;searchTrackingPageSize=36&amp;searchTrackingOrigPageSize=36",
+      "list": "Baumarkt/Garten & Grillen/Gartengeräte & Gartenwerkzeuge/Weitere Gartengeräte",
+      "preCacheConfig": {
+        "type": "prefetch",
+        "method": "onhover"
+      },
+      "brand": {
+        "name": "LEGO",
+        "logo": "lego.png",
+        "url": "lego.com"
+      },
+      "productType": "FLAT",
+      "ribbons": [
+        {
+          "type": "FREE_DELIVERY",
+          "text": "Versandkostenfrei"
+        }
+      ]
+    }
+  },
+  {
+    "locale": "de_DE",
+    "erpNumber": 103012264,
+    "name": "DS single article 1 SC03",
+    "data": {
+      "canonicalPath": "/p/anaf-test-ds-single-article-1-sc03/p103012264",
+      "havingPrice": true,
+      "keyfacts": {
+        "title": "DS single article 1 SC03",
+        "supplementalDescription": "Mit vielen tollen Features und zu einem supergünstigen Preis!!",
+        "moreDetails": "Wichtige Produktinformationen"
+      },
+      "ratings": {
+        "average": 4,
+        "count": 23,
+        "topRated": true,
+        "text": "TOP KUNDENBEWERTUNGEN"
+      },
+      "image": "https://qa.lidl.de/assets/611586062f149d9c0216a3e98cf10940.jpeg",
+      "specialDesc": "0% Finanzierung",
+      "gridLabel": "Stiftung Warentest - 17QL71",
+      "price": {
+        "price": 549.5,
+        "hasStar": true,
+        "showFrom": false,
+        "discount": {
+          "showDiscount": true,
+          "showFrom": false,
+          "showPercentage": true,
+          "showUpTo": false,
+          "fromRecommendedPrice": true,
+          "deletedPrice": 550,
+          "percentageDiscount": 10
+        },
+        "packaging": {
+          "amount": 100,
+          "unit": "ml",
+          "multiplicator": 1,
+          "type": "",
+          "text": ""
+        },
+        "basePrice": {
+          "amount": 1,
+          "prefix": false,
+          "price": 9999,
+          "unit": "l"
+        }
+      },
+      "havingVariablePrices": true,
+      "havingVideos": true,
+      "havingThreesixty": true,
+      "renderedTs": 1546603467,
+      "stockAvailability": {
+        "availabilityIndicator": 3,
+        "badgeInfo": {
+          "badges": [
+            {
+              "text": "Online demnächst verfügbar",
+              "type": "AVAILABLE_ONLINE"
+            },
+            {
+              "text": "In der Filiale",
+              "type": "IN_STORE"
+            }
+          ]
+        },
+        "onlineAvailable": true
+      },
+      "category": "Weinwelt / Weinart / Champagner, Sekt & Secco /",
+      "queryParams": "param1=parameter1&amp;param2=parameter2&amp;param3=parameter3",
+      "hashParams": "searchTrackingQuery=*&amp;searchTrackingPageSize=36&amp;searchTrackingOrigPageSize=36",
+      "list": "Baumarkt/Garten & Grillen/Gartengeräte & Gartenwerkzeuge/Weitere Gartengeräte",
+      "preCacheConfig": {
+        "type": "prefetch",
+        "method": "onhover"
+      },
+      "brand": {
+        "name": "LEGO",
+        "logo": "lego.png",
+        "url": "lego.com"
+      },
+      "productType": "FLAT",
+      "ribbons": [
+        {
+          "type": "FREE_DELIVERY",
+          "text": "Versandkostenfrei"
+        }
+      ]
+    }
+  },
+  {
+    "locale": "de_DE",
+    "erpNumber": 103002170,
+    "name": "MIOMARE® Test single article",
+    "data": {
+      "canonicalPath": "/p/miomare-test-single-article-1-sc53-e2e-testing-data-lud-mig/p103002170",
+      "havingPrice": true,
+      "keyfacts": {
+        "title": "MIOMARE® Test single article",
+        "supplementalDescription": "Mit vielen tollen Features und zu einem supergünstigen Preis!!",
+        "moreDetails": "Wichtige Produktinformationen"
+      },
+      "ratings": {
+        "average": 4,
+        "count": 23,
+        "topRated": true,
+        "text": "TOP KUNDENBEWERTUNGEN"
+      },
+      "image": "https://qa.lidl.de/assets/ba3be335577ed5a61a115e69486a0441.jpeg",
+      "specialDesc": "0% Finanzierung",
+      "gridLabel": "Stiftung Warentest - 17QL71",
+      "price": {
+        "price": 55,
+        "hasStar": true,
+        "showFrom": false,
+        "discount": {
+          "showDiscount": true,
+          "showFrom": false,
+          "showPercentage": true,
+          "showUpTo": false,
+          "fromRecommendedPrice": true,
+          "deletedPrice": 58,
+          "percentageDiscount": 5
+        },
+        "packaging": {
+          "amount": 100,
+          "unit": "ml",
+          "multiplicator": 1,
+          "type": "",
+          "text": ""
+        },
+        "basePrice": {
+          "amount": 1,
+          "prefix": false,
+          "price": 9999,
+          "unit": "l"
+        }
+      },
+      "havingVariablePrices": true,
+      "havingVideos": true,
+      "havingThreesixty": true,
+      "renderedTs": 1546603467,
+      "stockAvailability": {
+        "availabilityIndicator": 3,
+        "badgeInfo": {
+          "badges": [
+            {
+              "text": "Online demnächst verfügbar",
+              "type": "AVAILABLE_ONLINE"
+            },
+            {
+              "text": "In der Filiale",
+              "type": "IN_STORE"
+            }
+          ]
+        },
+        "onlineAvailable": true
+      },
+      "category": "Weinwelt / Weinart / Champagner, Sekt & Secco /",
+      "queryParams": "param1=parameter1&amp;param2=parameter2&amp;param3=parameter3",
+      "hashParams": "searchTrackingQuery=*&amp;searchTrackingPageSize=36&amp;searchTrackingOrigPageSize=36",
+      "list": "Baumarkt/Garten & Grillen/Gartengeräte & Gartenwerkzeuge/Weitere Gartengeräte",
+      "preCacheConfig": {
+        "type": "prefetch",
+        "method": "onhover"
+      },
+      "brand": {
+        "name": "LEGO",
+        "logo": "lego.png",
+        "url": "lego.com"
+      },
+      "productType": "FLAT",
+      "ribbons": [
+        {
+          "type": "FREE_DELIVERY",
+          "text": "Versandkostenfrei"
+        }
+      ]
+    }
   },
   {
     "data": {
-      "canonicalPath": "/p/singer-freiarm-naehmaschine-tradition-2282/p290564",
+      "canonicalPath": "/p/anaf-test-ds-single-article-1-sc03/p103012264",
       "havingPrice": true,
       "keyfacts": {
-        "title": "Ein klasse Lidl Produkt",
-        "supplementalDescription":
-        "Mit vielen tollen Features und zu einem supergünstigen Preis!!",
+        "title": "DS single article 1 SC03",
+        "supplementalDescription": "Mit vielen tollen Features und zu einem supergünstigen Preis!!",
         "moreDetails": "Wichtige Produktinformationen"
       },
       "ratings": {
         "average": 4,
-        "count": 35,
+        "count": 23,
         "topRated": true,
         "text": "TOP KUNDENBEWERTUNGEN"
       },
-      "image": "https://picsum.photos/g/400/300?random",
+      "image": "https://qa.lidl.de/assets/611586062f149d9c0216a3e98cf10940.jpeg",
       "specialDesc": "0% Finanzierung",
       "gridLabel": "Stiftung Warentest - 17QL71",
       "price": {
-        "price": 99.99,
+        "price": 549.5,
         "hasStar": true,
         "showFrom": false,
         "discount": {
@@ -117,8 +477,8 @@
           "showPercentage": true,
           "showUpTo": false,
           "fromRecommendedPrice": true,
-          "deletedPrice": 349.0,
-          "percentageDiscount": 71
+          "deletedPrice": 550,
+          "percentageDiscount": 10
         },
         "packaging": {
           "amount": 100,
@@ -155,10 +515,8 @@
         "onlineAvailable": true
       },
       "category": "Weinwelt / Weinart / Champagner, Sekt & Secco /",
-      "queryParams":
-      "param1=parameter1&amp;param2=parameter2&amp;param3=parameter3",
-      "hashParams":
-      "searchTrackingQuery=*&amp;searchTrackingPageSize=36&amp;searchTrackingOrigPageSize=36",
+      "queryParams": "param1=parameter1&amp;param2=parameter2&amp;param3=parameter3",
+      "hashParams": "searchTrackingQuery=*&amp;searchTrackingPageSize=36&amp;searchTrackingOrigPageSize=36",
       "list": "Baumarkt/Garten & Grillen/Gartengeräte & Gartenwerkzeuge/Weitere Gartengeräte",
       "preCacheConfig": {
         "type": "prefetch",
@@ -171,900 +529,13 @@
       },
       "productType": "FLAT",
       "ribbons": [
-        {"type": "FREE_DELIVERY", "text": "Versandkostenfrei"}
-      ]
-    },
-    "locale": "de_DE",
-    "erpNumber": 290565
-  },
-  {
-    "data": {
-      "canonicalPath": "/p/singer-freiarm-naehmaschine-tradition-2282/p290564",
-      "havingPrice": true,
-      "keyfacts": {
-        "title": "Ein klasse Lidl Produkt",
-        "supplementalDescription":
-        "Mit vielen tollen Features und zu einem supergünstigen Preis!!",
-        "moreDetails": "Wichtige Produktinformationen"
-      },
-      "ratings": {
-        "average": 4,
-        "count": 35,
-        "topRated": true,
-        "text": "TOP KUNDENBEWERTUNGEN"
-      },
-      "image": "https://picsum.photos/g/400/300?random",
-      "specialDesc": "0% Finanzierung",
-      "gridLabel": "Stiftung Warentest - 17QL71",
-      "price": {
-        "price": 99.99,
-        "hasStar": true,
-        "showFrom": false,
-        "discount": {
-          "showDiscount": true,
-          "showFrom": false,
-          "showPercentage": true,
-          "showUpTo": false,
-          "fromRecommendedPrice": true,
-          "deletedPrice": 349.0,
-          "percentageDiscount": 71
-        },
-        "packaging": {
-          "amount": 100,
-          "unit": "ml",
-          "multiplicator": 1,
-          "type": "",
-          "text": ""
-        },
-        "basePrice": {
-          "amount": 1,
-          "prefix": false,
-          "price": 9999,
-          "unit": "l"
+        {
+          "type": "FREE_DELIVERY",
+          "text": "Versandkostenfrei"
         }
-      },
-      "havingVariablePrices": true,
-      "havingVideos": true,
-      "havingThreesixty": true,
-      "renderedTs": 1546603467,
-      "stockAvailability": {
-        "availabilityIndicator": 3,
-        "badgeInfo": {
-          "badges": [
-            {
-              "text": "Online demnächst verfügbar",
-              "type": "AVAILABLE_ONLINE"
-            },
-            {
-              "text": "In der Filiale",
-              "type": "IN_STORE"
-            }
-          ]
-        },
-        "onlineAvailable": true
-      },
-      "category": "Weinwelt / Weinart / Champagner, Sekt & Secco /",
-      "queryParams":
-      "param1=parameter1&amp;param2=parameter2&amp;param3=parameter3",
-      "hashParams":
-      "searchTrackingQuery=*&amp;searchTrackingPageSize=36&amp;searchTrackingOrigPageSize=36",
-      "list": "Baumarkt/Garten & Grillen/Gartengeräte & Gartenwerkzeuge/Weitere Gartengeräte",
-      "preCacheConfig": {
-        "type": "prefetch",
-        "method": "onhover"
-      },
-      "brand": {
-        "name": "LEGO",
-        "logo": "lego.png",
-        "url": "lego.com"
-      },
-      "productType": "FLAT",
-      "ribbons": [
-        {"type": "FREE_DELIVERY", "text": "Versandkostenfrei"}
       ]
     },
     "locale": "de_DE",
-    "erpNumber": 290566
-  },
-  {
-    "data": {
-      "canonicalPath": "/p/singer-freiarm-naehmaschine-tradition-2282/p290564",
-      "havingPrice": true,
-      "keyfacts": {
-        "title": "Ein klasse Lidl Produkt",
-        "supplementalDescription":
-        "Mit vielen tollen Features und zu einem supergünstigen Preis!!",
-        "moreDetails": "Wichtige Produktinformationen"
-      },
-      "ratings": {
-        "average": 4,
-        "count": 35,
-        "topRated": true,
-        "text": "TOP KUNDENBEWERTUNGEN"
-      },
-      "image": "https://picsum.photos/g/400/300?random",
-      "specialDesc": "0% Finanzierung",
-      "gridLabel": "Stiftung Warentest - 17QL71",
-      "price": {
-        "price": 99.99,
-        "hasStar": true,
-        "showFrom": false,
-        "discount": {
-          "showDiscount": true,
-          "showFrom": false,
-          "showPercentage": true,
-          "showUpTo": false,
-          "fromRecommendedPrice": true,
-          "deletedPrice": 349.0,
-          "percentageDiscount": 71
-        },
-        "packaging": {
-          "amount": 100,
-          "unit": "ml",
-          "multiplicator": 1,
-          "type": "",
-          "text": ""
-        },
-        "basePrice": {
-          "amount": 1,
-          "prefix": false,
-          "price": 9999,
-          "unit": "l"
-        }
-      },
-      "havingVariablePrices": true,
-      "havingVideos": true,
-      "havingThreesixty": true,
-      "renderedTs": 1546603467,
-      "stockAvailability": {
-        "availabilityIndicator": 3,
-        "badgeInfo": {
-          "badges": [
-            {
-              "text": "Online demnächst verfügbar",
-              "type": "AVAILABLE_ONLINE"
-            },
-            {
-              "text": "In der Filiale",
-              "type": "IN_STORE"
-            }
-          ]
-        },
-        "onlineAvailable": true
-      },
-      "category": "Weinwelt / Weinart / Champagner, Sekt & Secco /",
-      "queryParams":
-      "param1=parameter1&amp;param2=parameter2&amp;param3=parameter3",
-      "hashParams":
-      "searchTrackingQuery=*&amp;searchTrackingPageSize=36&amp;searchTrackingOrigPageSize=36",
-      "list": "Baumarkt/Garten & Grillen/Gartengeräte & Gartenwerkzeuge/Weitere Gartengeräte",
-      "preCacheConfig": {
-        "type": "prefetch",
-        "method": "onhover"
-      },
-      "brand": {
-        "name": "LEGO",
-        "logo": "lego.png",
-        "url": "lego.com"
-      },
-      "productType": "FLAT",
-      "ribbons": [
-        {"type": "FREE_DELIVERY", "text": "Versandkostenfrei"}
-      ]
-    },
-    "locale": "de_DE",
-    "erpNumber": 290567
-  },
-  {
-    "data": {
-      "canonicalPath": "/p/singer-freiarm-naehmaschine-tradition-2282/p290564",
-      "havingPrice": true,
-      "keyfacts": {
-        "title": "Ein klasse Lidl Produkt",
-        "supplementalDescription":
-        "Mit vielen tollen Features und zu einem supergünstigen Preis!!",
-        "moreDetails": "Wichtige Produktinformationen"
-      },
-      "ratings": {
-        "average": 4,
-        "count": 35,
-        "topRated": true,
-        "text": "TOP KUNDENBEWERTUNGEN"
-      },
-      "image": "https://picsum.photos/g/400/300?random",
-      "specialDesc": "0% Finanzierung",
-      "gridLabel": "Stiftung Warentest - 17QL71",
-      "price": {
-        "price": 99.99,
-        "hasStar": true,
-        "showFrom": false,
-        "discount": {
-          "showDiscount": true,
-          "showFrom": false,
-          "showPercentage": true,
-          "showUpTo": false,
-          "fromRecommendedPrice": true,
-          "deletedPrice": 349.0,
-          "percentageDiscount": 71
-        },
-        "packaging": {
-          "amount": 100,
-          "unit": "ml",
-          "multiplicator": 1,
-          "type": "",
-          "text": ""
-        },
-        "basePrice": {
-          "amount": 1,
-          "prefix": false,
-          "price": 9999,
-          "unit": "l"
-        }
-      },
-      "havingVariablePrices": true,
-      "havingVideos": true,
-      "havingThreesixty": true,
-      "renderedTs": 1546603467,
-      "stockAvailability": {
-        "availabilityIndicator": 3,
-        "badgeInfo": {
-          "badges": [
-            {
-              "text": "Online demnächst verfügbar",
-              "type": "AVAILABLE_ONLINE"
-            },
-            {
-              "text": "In der Filiale",
-              "type": "IN_STORE"
-            }
-          ]
-        },
-        "onlineAvailable": true
-      },
-      "category": "Weinwelt / Weinart / Champagner, Sekt & Secco /",
-      "queryParams":
-      "param1=parameter1&amp;param2=parameter2&amp;param3=parameter3",
-      "hashParams":
-      "searchTrackingQuery=*&amp;searchTrackingPageSize=36&amp;searchTrackingOrigPageSize=36",
-      "list": "Baumarkt/Garten & Grillen/Gartengeräte & Gartenwerkzeuge/Weitere Gartengeräte",
-      "preCacheConfig": {
-        "type": "prefetch",
-        "method": "onhover"
-      },
-      "brand": {
-        "name": "LEGO",
-        "logo": "lego.png",
-        "url": "lego.com"
-      },
-      "productType": "FLAT",
-      "ribbons": [
-        {"type": "FREE_DELIVERY", "text": "Versandkostenfrei"}
-      ]
-    },
-    "locale": "de_DE",
-    "erpNumber": 290568
-  },
-  {
-    "data": {
-      "canonicalPath": "/p/singer-freiarm-naehmaschine-tradition-2282/p290564",
-      "havingPrice": true,
-      "keyfacts": {
-        "title": "Ein klasse Lidl Produkt",
-        "supplementalDescription":
-        "Mit vielen tollen Features und zu einem supergünstigen Preis!!",
-        "moreDetails": "Wichtige Produktinformationen"
-      },
-      "ratings": {
-        "average": 4,
-        "count": 35,
-        "topRated": true,
-        "text": "TOP KUNDENBEWERTUNGEN"
-      },
-      "image": "https://picsum.photos/g/400/300?random",
-      "specialDesc": "0% Finanzierung",
-      "gridLabel": "Stiftung Warentest - 17QL71",
-      "price": {
-        "price": 99.99,
-        "hasStar": true,
-        "showFrom": false,
-        "discount": {
-          "showDiscount": true,
-          "showFrom": false,
-          "showPercentage": true,
-          "showUpTo": false,
-          "fromRecommendedPrice": true,
-          "deletedPrice": 349.0,
-          "percentageDiscount": 71
-        },
-        "packaging": {
-          "amount": 100,
-          "unit": "ml",
-          "multiplicator": 1,
-          "type": "",
-          "text": ""
-        },
-        "basePrice": {
-          "amount": 1,
-          "prefix": false,
-          "price": 9999,
-          "unit": "l"
-        }
-      },
-      "havingVariablePrices": true,
-      "havingVideos": true,
-      "havingThreesixty": true,
-      "renderedTs": 1546603467,
-      "stockAvailability": {
-        "availabilityIndicator": 3,
-        "badgeInfo": {
-          "badges": [
-            {
-              "text": "Online demnächst verfügbar",
-              "type": "AVAILABLE_ONLINE"
-            },
-            {
-              "text": "In der Filiale",
-              "type": "IN_STORE"
-            }
-          ]
-        },
-        "onlineAvailable": true
-      },
-      "category": "Weinwelt / Weinart / Champagner, Sekt & Secco /",
-      "queryParams":
-      "param1=parameter1&amp;param2=parameter2&amp;param3=parameter3",
-      "hashParams":
-      "searchTrackingQuery=*&amp;searchTrackingPageSize=36&amp;searchTrackingOrigPageSize=36",
-      "list": "Baumarkt/Garten & Grillen/Gartengeräte & Gartenwerkzeuge/Weitere Gartengeräte",
-      "preCacheConfig": {
-        "type": "prefetch",
-        "method": "onhover"
-      },
-      "brand": {
-        "name": "LEGO",
-        "logo": "lego.png",
-        "url": "lego.com"
-      },
-      "productType": "FLAT",
-      "ribbons": [
-        {"type": "FREE_DELIVERY", "text": "Versandkostenfrei"}
-      ]
-    },
-    "locale": "de_DE",
-    "erpNumber": 290569
-  },
-  {
-    "data": {
-      "canonicalPath": "/p/singer-freiarm-naehmaschine-tradition-2282/p290564",
-      "havingPrice": true,
-      "keyfacts": {
-        "title": "Ein klasse Lidl Produkt",
-        "supplementalDescription":
-        "Mit vielen tollen Features und zu einem supergünstigen Preis!!",
-        "moreDetails": "Wichtige Produktinformationen"
-      },
-      "ratings": {
-        "average": 4,
-        "count": 35,
-        "topRated": true,
-        "text": "TOP KUNDENBEWERTUNGEN"
-      },
-      "image": "https://picsum.photos/g/400/300?random",
-      "specialDesc": "0% Finanzierung",
-      "gridLabel": "Stiftung Warentest - 17QL71",
-      "price": {
-        "price": 99.99,
-        "hasStar": true,
-        "showFrom": false,
-        "discount": {
-          "showDiscount": true,
-          "showFrom": false,
-          "showPercentage": true,
-          "showUpTo": false,
-          "fromRecommendedPrice": true,
-          "deletedPrice": 349.0,
-          "percentageDiscount": 71
-        },
-        "packaging": {
-          "amount": 100,
-          "unit": "ml",
-          "multiplicator": 1,
-          "type": "",
-          "text": ""
-        },
-        "basePrice": {
-          "amount": 1,
-          "prefix": false,
-          "price": 9999,
-          "unit": "l"
-        }
-      },
-      "havingVariablePrices": true,
-      "havingVideos": true,
-      "havingThreesixty": true,
-      "renderedTs": 1546603467,
-      "stockAvailability": {
-        "availabilityIndicator": 3,
-        "badgeInfo": {
-          "badges": [
-            {
-              "text": "Online demnächst verfügbar",
-              "type": "AVAILABLE_ONLINE"
-            },
-            {
-              "text": "In der Filiale",
-              "type": "IN_STORE"
-            }
-          ]
-        },
-        "onlineAvailable": true
-      },
-      "category": "Weinwelt / Weinart / Champagner, Sekt & Secco /",
-      "queryParams":
-      "param1=parameter1&amp;param2=parameter2&amp;param3=parameter3",
-      "hashParams":
-      "searchTrackingQuery=*&amp;searchTrackingPageSize=36&amp;searchTrackingOrigPageSize=36",
-      "list": "Baumarkt/Garten & Grillen/Gartengeräte & Gartenwerkzeuge/Weitere Gartengeräte",
-      "preCacheConfig": {
-        "type": "prefetch",
-        "method": "onhover"
-      },
-      "brand": {
-        "name": "LEGO",
-        "logo": "lego.png",
-        "url": "lego.com"
-      },
-      "productType": "FLAT",
-      "ribbons": [
-        {"type": "FREE_DELIVERY", "text": "Versandkostenfrei"}
-      ]
-    },
-    "locale": "de_DE",
-    "erpNumber": 290570
-  },
-  {
-    "data": {
-      "canonicalPath": "/p/singer-freiarm-naehmaschine-tradition-2282/p290564",
-      "havingPrice": true,
-      "keyfacts": {
-        "title": "Ein klasse Lidl Produkt",
-        "supplementalDescription":
-        "Mit vielen tollen Features und zu einem supergünstigen Preis!!",
-        "moreDetails": "Wichtige Produktinformationen"
-      },
-      "ratings": {
-        "average": 4,
-        "count": 35,
-        "topRated": true,
-        "text": "TOP KUNDENBEWERTUNGEN"
-      },
-      "image": "https://picsum.photos/g/400/300?random",
-      "specialDesc": "0% Finanzierung",
-      "gridLabel": "Stiftung Warentest - 17QL71",
-      "price": {
-        "price": 99.99,
-        "hasStar": true,
-        "showFrom": false,
-        "discount": {
-          "showDiscount": true,
-          "showFrom": false,
-          "showPercentage": true,
-          "showUpTo": false,
-          "fromRecommendedPrice": true,
-          "deletedPrice": 349.0,
-          "percentageDiscount": 71
-        },
-        "packaging": {
-          "amount": 100,
-          "unit": "ml",
-          "multiplicator": 1,
-          "type": "",
-          "text": ""
-        },
-        "basePrice": {
-          "amount": 1,
-          "prefix": false,
-          "price": 9999,
-          "unit": "l"
-        }
-      },
-      "havingVariablePrices": true,
-      "havingVideos": true,
-      "havingThreesixty": true,
-      "renderedTs": 1546603467,
-      "stockAvailability": {
-        "availabilityIndicator": 3,
-        "badgeInfo": {
-          "badges": [
-            {
-              "text": "Online demnächst verfügbar",
-              "type": "AVAILABLE_ONLINE"
-            },
-            {
-              "text": "In der Filiale",
-              "type": "IN_STORE"
-            }
-          ]
-        },
-        "onlineAvailable": true
-      },
-      "category": "Weinwelt / Weinart / Champagner, Sekt & Secco /",
-      "queryParams":
-      "param1=parameter1&amp;param2=parameter2&amp;param3=parameter3",
-      "hashParams":
-      "searchTrackingQuery=*&amp;searchTrackingPageSize=36&amp;searchTrackingOrigPageSize=36",
-      "list": "Baumarkt/Garten & Grillen/Gartengeräte & Gartenwerkzeuge/Weitere Gartengeräte",
-      "preCacheConfig": {
-        "type": "prefetch",
-        "method": "onhover"
-      },
-      "brand": {
-        "name": "LEGO",
-        "logo": "lego.png",
-        "url": "lego.com"
-      },
-      "productType": "FLAT",
-      "ribbons": [
-        {"type": "FREE_DELIVERY", "text": "Versandkostenfrei"}
-      ]
-    },
-    "locale": "de_DE",
-    "erpNumber": 290571
-  },
-  {
-    "data": {
-      "canonicalPath": "/p/singer-freiarm-naehmaschine-tradition-2282/p290564",
-      "havingPrice": true,
-      "keyfacts": {
-        "title": "Ein klasse Lidl Produkt",
-        "supplementalDescription":
-        "Mit vielen tollen Features und zu einem supergünstigen Preis!!",
-        "moreDetails": "Wichtige Produktinformationen"
-      },
-      "ratings": {
-        "average": 4,
-        "count": 35,
-        "topRated": true,
-        "text": "TOP KUNDENBEWERTUNGEN"
-      },
-      "image": "https://picsum.photos/g/400/300?random",
-      "specialDesc": "0% Finanzierung",
-      "gridLabel": "Stiftung Warentest - 17QL71",
-      "price": {
-        "price": 99.99,
-        "hasStar": true,
-        "showFrom": false,
-        "discount": {
-          "showDiscount": true,
-          "showFrom": false,
-          "showPercentage": true,
-          "showUpTo": false,
-          "fromRecommendedPrice": true,
-          "deletedPrice": 349.0,
-          "percentageDiscount": 71
-        },
-        "packaging": {
-          "amount": 100,
-          "unit": "ml",
-          "multiplicator": 1,
-          "type": "",
-          "text": ""
-        },
-        "basePrice": {
-          "amount": 1,
-          "prefix": false,
-          "price": 9999,
-          "unit": "l"
-        }
-      },
-      "havingVariablePrices": true,
-      "havingVideos": true,
-      "havingThreesixty": true,
-      "renderedTs": 1546603467,
-      "stockAvailability": {
-        "availabilityIndicator": 3,
-        "badgeInfo": {
-          "badges": [
-            {
-              "text": "Online demnächst verfügbar",
-              "type": "AVAILABLE_ONLINE"
-            },
-            {
-              "text": "In der Filiale",
-              "type": "IN_STORE"
-            }
-          ]
-        },
-        "onlineAvailable": true
-      },
-      "category": "Weinwelt / Weinart / Champagner, Sekt & Secco /",
-      "queryParams":
-      "param1=parameter1&amp;param2=parameter2&amp;param3=parameter3",
-      "hashParams":
-      "searchTrackingQuery=*&amp;searchTrackingPageSize=36&amp;searchTrackingOrigPageSize=36",
-      "list": "Baumarkt/Garten & Grillen/Gartengeräte & Gartenwerkzeuge/Weitere Gartengeräte",
-      "preCacheConfig": {
-        "type": "prefetch",
-        "method": "onhover"
-      },
-      "brand": {
-        "name": "LEGO",
-        "logo": "lego.png",
-        "url": "lego.com"
-      },
-      "productType": "FLAT",
-      "ribbons": [
-        {"type": "FREE_DELIVERY", "text": "Versandkostenfrei"}
-      ]
-    },
-    "locale": "de_DE",
-    "erpNumber": 290572
-  },
-  {
-    "data": {
-      "canonicalPath": "/p/singer-freiarm-naehmaschine-tradition-2282/p290564",
-      "havingPrice": true,
-      "keyfacts": {
-        "title": "Ein klasse Lidl Produkt",
-        "supplementalDescription":
-        "Mit vielen tollen Features und zu einem supergünstigen Preis!!",
-        "moreDetails": "Wichtige Produktinformationen"
-      },
-      "ratings": {
-        "average": 4,
-        "count": 35,
-        "topRated": true,
-        "text": "TOP KUNDENBEWERTUNGEN"
-      },
-      "image": "https://picsum.photos/g/400/300?random",
-      "specialDesc": "0% Finanzierung",
-      "gridLabel": "Stiftung Warentest - 17QL71",
-      "price": {
-        "price": 99.99,
-        "hasStar": true,
-        "showFrom": false,
-        "discount": {
-          "showDiscount": true,
-          "showFrom": false,
-          "showPercentage": true,
-          "showUpTo": false,
-          "fromRecommendedPrice": true,
-          "deletedPrice": 349.0,
-          "percentageDiscount": 71
-        },
-        "packaging": {
-          "amount": 100,
-          "unit": "ml",
-          "multiplicator": 1,
-          "type": "",
-          "text": ""
-        },
-        "basePrice": {
-          "amount": 1,
-          "prefix": false,
-          "price": 9999,
-          "unit": "l"
-        }
-      },
-      "havingVariablePrices": true,
-      "havingVideos": true,
-      "havingThreesixty": true,
-      "renderedTs": 1546603467,
-      "stockAvailability": {
-        "availabilityIndicator": 3,
-        "badgeInfo": {
-          "badges": [
-            {
-              "text": "Online demnächst verfügbar",
-              "type": "AVAILABLE_ONLINE"
-            },
-            {
-              "text": "In der Filiale",
-              "type": "IN_STORE"
-            }
-          ]
-        },
-        "onlineAvailable": true
-      },
-      "category": "Weinwelt / Weinart / Champagner, Sekt & Secco /",
-      "queryParams":
-      "param1=parameter1&amp;param2=parameter2&amp;param3=parameter3",
-      "hashParams":
-      "searchTrackingQuery=*&amp;searchTrackingPageSize=36&amp;searchTrackingOrigPageSize=36",
-      "list": "Baumarkt/Garten & Grillen/Gartengeräte & Gartenwerkzeuge/Weitere Gartengeräte",
-      "preCacheConfig": {
-        "type": "prefetch",
-        "method": "onhover"
-      },
-      "brand": {
-        "name": "LEGO",
-        "logo": "lego.png",
-        "url": "lego.com"
-      },
-      "productType": "FLAT",
-      "ribbons": [
-        {"type": "FREE_DELIVERY", "text": "Versandkostenfrei"}
-      ]
-    },
-    "locale": "de_DE",
-    "erpNumber": 290573
-  },
-  {
-    "data": {
-      "canonicalPath": "/p/singer-freiarm-naehmaschine-tradition-2282/p290564",
-      "havingPrice": true,
-      "keyfacts": {
-        "title": "Ein klasse Lidl Produkt",
-        "supplementalDescription":
-        "Mit vielen tollen Features und zu einem supergünstigen Preis!!",
-        "moreDetails": "Wichtige Produktinformationen"
-      },
-      "ratings": {
-        "average": 4,
-        "count": 35,
-        "topRated": true,
-        "text": "TOP KUNDENBEWERTUNGEN"
-      },
-      "image": "https://picsum.photos/g/400/300?random",
-      "specialDesc": "0% Finanzierung",
-      "gridLabel": "Stiftung Warentest - 17QL71",
-      "price": {
-        "price": 99.99,
-        "hasStar": true,
-        "showFrom": false,
-        "discount": {
-          "showDiscount": true,
-          "showFrom": false,
-          "showPercentage": true,
-          "showUpTo": false,
-          "fromRecommendedPrice": true,
-          "deletedPrice": 349.0,
-          "percentageDiscount": 71
-        },
-        "packaging": {
-          "amount": 100,
-          "unit": "ml",
-          "multiplicator": 1,
-          "type": "",
-          "text": ""
-        },
-        "basePrice": {
-          "amount": 1,
-          "prefix": false,
-          "price": 9999,
-          "unit": "l"
-        }
-      },
-      "havingVariablePrices": true,
-      "havingVideos": true,
-      "havingThreesixty": true,
-      "renderedTs": 1546603467,
-      "stockAvailability": {
-        "availabilityIndicator": 3,
-        "badgeInfo": {
-          "badges": [
-            {
-              "text": "Online demnächst verfügbar",
-              "type": "AVAILABLE_ONLINE"
-            },
-            {
-              "text": "In der Filiale",
-              "type": "IN_STORE"
-            }
-          ]
-        },
-        "onlineAvailable": true
-      },
-      "category": "Weinwelt / Weinart / Champagner, Sekt & Secco /",
-      "queryParams":
-      "param1=parameter1&amp;param2=parameter2&amp;param3=parameter3",
-      "hashParams":
-      "searchTrackingQuery=*&amp;searchTrackingPageSize=36&amp;searchTrackingOrigPageSize=36",
-      "list": "Baumarkt/Garten & Grillen/Gartengeräte & Gartenwerkzeuge/Weitere Gartengeräte",
-      "preCacheConfig": {
-        "type": "prefetch",
-        "method": "onhover"
-      },
-      "brand": {
-        "name": "LEGO",
-        "logo": "lego.png",
-        "url": "lego.com"
-      },
-      "productType": "FLAT",
-      "ribbons": [
-        {"type": "FREE_DELIVERY", "text": "Versandkostenfrei"}
-      ]
-    },
-    "locale": "de_DE",
-    "erpNumber": 290574
-  },
-  {
-    "data": {
-      "canonicalPath": "/p/singer-freiarm-naehmaschine-tradition-2282/p290564",
-      "havingPrice": true,
-      "keyfacts": {
-        "title": "Ein klasse Lidl Produkt",
-        "supplementalDescription":
-        "Mit vielen tollen Features und zu einem supergünstigen Preis!!",
-        "moreDetails": "Wichtige Produktinformationen"
-      },
-      "ratings": {
-        "average": 4,
-        "count": 35,
-        "topRated": true,
-        "text": "TOP KUNDENBEWERTUNGEN"
-      },
-      "image": "https://picsum.photos/g/400/300?random",
-      "specialDesc": "0% Finanzierung",
-      "gridLabel": "Stiftung Warentest - 17QL71",
-      "price": {
-        "price": 99.99,
-        "hasStar": true,
-        "showFrom": false,
-        "discount": {
-          "showDiscount": true,
-          "showFrom": false,
-          "showPercentage": true,
-          "showUpTo": false,
-          "fromRecommendedPrice": true,
-          "deletedPrice": 349.0,
-          "percentageDiscount": 71
-        },
-        "packaging": {
-          "amount": 100,
-          "unit": "ml",
-          "multiplicator": 1,
-          "type": "",
-          "text": ""
-        },
-        "basePrice": {
-          "amount": 1,
-          "prefix": false,
-          "price": 9999,
-          "unit": "l"
-        }
-      },
-      "havingVariablePrices": true,
-      "havingVideos": true,
-      "havingThreesixty": true,
-      "renderedTs": 1546603467,
-      "stockAvailability": {
-        "availabilityIndicator": 3,
-        "badgeInfo": {
-          "badges": [
-            {
-              "text": "Online demnächst verfügbar",
-              "type": "AVAILABLE_ONLINE"
-            },
-            {
-              "text": "In der Filiale",
-              "type": "IN_STORE"
-            }
-          ]
-        },
-        "onlineAvailable": true
-      },
-      "category": "Weinwelt / Weinart / Champagner, Sekt & Secco /",
-      "queryParams":
-      "param1=parameter1&amp;param2=parameter2&amp;param3=parameter3",
-      "hashParams":
-      "searchTrackingQuery=*&amp;searchTrackingPageSize=36&amp;searchTrackingOrigPageSize=36",
-      "list": "Baumarkt/Garten & Grillen/Gartengeräte & Gartenwerkzeuge/Weitere Gartengeräte",
-      "preCacheConfig": {
-        "type": "prefetch",
-        "method": "onhover"
-      },
-      "brand": {
-        "name": "LEGO",
-        "logo": "lego.png",
-        "url": "lego.com"
-      },
-      "productType": "FLAT",
-      "ribbons": [
-        {"type": "FREE_DELIVERY", "text": "Versandkostenfrei"}
-      ]
-    },
-    "locale": "de_DE",
-    "erpNumber": 290575
+    "erpNumber": 103012264
   }
 ]
