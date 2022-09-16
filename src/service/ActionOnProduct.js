@@ -17,8 +17,7 @@ export const GET_PRODUCTS = gql`
 export const ADD_PRODUCT = gql`
   mutation updateProduct(
     $name: String!
-    $erp_number: Int!
-    $locale: String!
+    $erp_number: bigint!
     $data: jsonb!
   ) {
     insert_products(
@@ -26,7 +25,7 @@ export const ADD_PRODUCT = gql`
         {
           name: $name
           erp_number: $erp_number
-          locale: $locale
+          locale: "de_DE"
         }
       ]
     ) {
@@ -58,8 +57,7 @@ export const UPDATE_PRODUCT = gql`
  mutation updateProduct(
     $id: Int!
     $name: String!
-    $erp_number: Int!
-    $locale: String!
+    $erp_number: bigint!
     $data: jsonb!
   ) {
   update_products_data(where: {erp_number: {_eq: $erp_number}, info: {erp_number: {_eq: $erp_number}}, _and: {id: {_eq: $id}}}, _set: {data: $data}) {
@@ -67,7 +65,7 @@ export const UPDATE_PRODUCT = gql`
       id
     }
   }
-  update_products(where: {erp_number: {_eq: $erp_number}}, _set: {name: $name, locale: $locale}) {
+  update_products(where: {erp_number: {_eq: $erp_number}}, _set: {name: $name}) {
     returning {
       id
       erp_number
@@ -79,7 +77,7 @@ export const UPDATE_PRODUCT = gql`
 export const DELETE_PRODUCT = gql`
   mutation deleteProduct(
     $id: Int!
-    $erp_number: Int!
+    $erp_number: bigint!
   ) {
   delete_products_data(where: {erp_number: {_eq: $erp_number}, id: {_eq: $id}}) {
     returning {

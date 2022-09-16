@@ -2,6 +2,7 @@
   <div
     class="AProductGridBox"
   >
+    <Skeleton :is-loading="$apollo.loading"></Skeleton>
     <div
       class="AProductGridBox__List"
     >
@@ -26,15 +27,18 @@
 <script>
 import ProductGridBox from '@mindshift/product-grid-box/dist/productGridBox.umd'
 import { GET_PRODUCTS } from '../service/ActionOnProduct'
+import Skeleton from './Skeleton.vue'
 
 export default {
   name: 'Product',
   components: {
-    ProductGridBox
+    ProductGridBox,
+    Skeleton
   },
   data () {
     return {
       products_data: [],
+      mockData: [{}, {}, {}, {}],
       data: {}
     }
   },

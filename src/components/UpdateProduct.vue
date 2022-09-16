@@ -3,7 +3,7 @@
     <div class="accordion update-product-form" role="tablist">
       <!--        CREATE          -->
       <b-card no-body class="mb-1">
-        <b-card-header header-tag="header" class="p-1" role="tab">
+        <b-card-header @click="onReset" header-tag="header" class="p-1" role="tab">
           <b-button class="update-product-header" block v-b-toggle.create-product variant="primary">Add product</b-button>
         </b-card-header>
         <b-collapse id="create-product" visible accordion="my-accordion" role="tabpanel">
@@ -16,11 +16,6 @@
 
               <b-form-group id="input-create-name" label="Product Name" label-for="input-create-name">
                 <b-form-input id="input-create-name" v-model="name" type="text" placeholder="Name">
-                </b-form-input>
-              </b-form-group>
-
-              <b-form-group id="input-create-locale" label="Locale" label-for="input-create-locale">
-                <b-form-input id="input-create-locale" v-model="locale" placeholder="Locale">
                 </b-form-input>
               </b-form-group>
 
@@ -38,7 +33,7 @@
 
       <!--        UPDATE          -->
       <b-card no-body class="mb-1">
-        <b-card-header header-tag="header" class="p-1" role="tab">
+        <b-card-header @click="onReset" header-tag="header" class="p-1" role="tab">
           <b-button class="update-product-header"  block v-b-toggle.update-product variant="primary">Update product</b-button>
         </b-card-header>
         <b-collapse id="update-product" accordion="my-accordion" role="tabpanel">
@@ -59,11 +54,6 @@
                 </b-form-input>
               </b-form-group>
 
-              <b-form-group id="input-update-locale" label="Locale" label-for="input-update-locale">
-                <b-form-input id="input-create-locale" v-model="locale" placeholder="Locale">
-                </b-form-input>
-              </b-form-group>
-
               <b-form-group id="input-update-data" label="Data" label-for="input-update-data">
                 <b-form-textarea id="product-update-data" v-model="data" placeholder="Product data" rows="2" max-rows="4">
                 </b-form-textarea>
@@ -78,7 +68,7 @@
 
       <!--        DELETE          -->
       <b-card no-body class="mb-1">
-        <b-card-header header-tag="header" class="p-1" role="tab">
+        <b-card-header @click="onReset" header-tag="header" class="p-1" role="tab">
           <b-button class="update-product-header" block v-b-toggle.delete-product variant="primary">Delete product</b-button>
         </b-card-header>
         <b-collapse id="delete-product" accordion="my-accordion" role="tabpanel">
@@ -106,7 +96,7 @@
         :key="idx"
       >
         <p><strong>PRODUCT ID: {{ product.id }}</strong></p>
-        <p>Erp_number: {{ product.erp_number }}, Name: {{ product.info.name }}, Locale: {{ product.info.locale }}</p>
+        <p>Erp_number: {{ product.erp_number }}, Name: {{ product.info.name }}</p>
         <article class="product-item-data">Data: {{ product.data }}</article>
       </li>
     </div>
@@ -127,7 +117,6 @@ export default {
       id: '',
       name: '',
       erp_number: '',
-      locale: '',
       data: '',
       products_data: []
     }
@@ -154,19 +143,22 @@ export default {
     },
     onSubmit () {
       // eslint-disable-next-line camelcase
-      const {name, erp_number, locale, data} = this.$data
+      let {name, erp_number, data} = this.$data
+      if (data) {
+        data = JSON.parse(data)
+      }
       this.$apollo.mutate({
         mutation: ADD_PRODUCT,
         variables: {
           name,
           erp_number,
-          locale,
           data
         },
         refetchQueries: ['getProducts']
       }).then(
         result => {
           this.makeToast('success', 'Product ' + result.data.insert_products.returning[0].erp_number + ' is added')
+          this.onReset()
         },
         error => {
           this.makeToast('danger', error.message)
@@ -175,7 +167,10 @@ export default {
     },
     onUpdate () {
       // eslint-disable-next-line camelcase
-      let {id, erp_number, name, locale, data} = this.$data
+      let {id, erp_number, name, data} = this.$data
+      if (data) {
+        data = JSON.parse(data)
+      }
       if (name === '') {
         name = this.getDataForFieldName(id, 'name')
       }
@@ -191,13 +186,13 @@ export default {
             id,
             name,
             erp_number,
-            locale,
             data
           },
           refetchQueries: ['getProducts']
         }).then(
           result => {
             this.makeToast('success', 'Product ' + result.data.update_products.returning[0].erp_number + ' is updated')
+            this.onReset()
           },
           error => {
             this.makeToast('danger', error.message)
@@ -211,8 +206,8 @@ export default {
     onReset () {
       this.erp_number = ''
       this.name = ''
-      this.locale = ''
       this.data = ''
+      this.id = ''
     },
 
     onDelete () {
@@ -231,6 +226,7 @@ export default {
         }).then(
           result => {
             this.makeToast('success', 'Product ID ' + result.data.delete_products_data.returning[0].id + ' is deleted')
+            this.onReset()
           },
           error => {
             this.makeToast('danger', error.message)
