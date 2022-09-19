@@ -9,7 +9,7 @@
         </b-card-header>
         <b-collapse id="create-product" visible accordion="my-accordion" role="tabpanel">
           <b-card-body>
-            <b-form class="create-product-form" @submit.prevent="onSubmit" @reset.prevent="onReset">
+            <b-form class="create-product-form" @submit.prevent="onCreate" @reset.prevent="onReset">
               <b-form-group id="input-create-erpNumber" label="ErpNumber" label-for="input-create-erpNumber">
                 <b-form-input id="input-create-erpNumber" v-model="erp_number" placeholder="ErpNumber" required>
                 </b-form-input>
@@ -123,26 +123,13 @@ export default {
     }
   },
   methods: {
-    sortData (myArray) {
-      return myArray.slice().sort((a, b) => b.id - a.id)
-    },
-    makeToast (variant = null, message) {
-      this.$bvToast.toast(message, {
-        title: `Variant ${variant || 'default'}`,
-        variant: variant,
-        autoHideDelay: 5000,
-        solid: true
-      })
-    },
-    checkValidProduct (id, erpNumber) {
-      return this.products_data.some(product => product.id.toString() === id && product.erp_number.toString() === erpNumber)
-    },
-    onSubmit () {
+    onCreate () {
       // eslint-disable-next-line camelcase
       let {name, erp_number, data} = this.$data
-      if (data) {
+      if (data && this.isJsonString(data)) {
         data = JSON.parse(data)
       }
+
       this.$apollo.mutate({
         mutation: ADD_PRODUCT,
         variables: {
@@ -164,7 +151,7 @@ export default {
     onUpdate () {
       // eslint-disable-next-line camelcase
       let {id, erp_number, name, data} = this.$data
-      if (data) {
+      if (data && this.isJsonString(data)) {
         data = JSON.parse(data)
       }
       if (name === '') {
@@ -239,6 +226,29 @@ export default {
         return fieldName === 'data' ? updatedProduct[fieldName] : updatedProduct.info[fieldName]
       }
       return ''
+    },
+
+    isJsonString (str) {
+      try {
+        JSON.parse(str)
+      } catch (e) {
+        return false
+      }
+      return true
+    },
+    sortData (myArray) {
+      return myArray.slice().sort((a, b) => b.id - a.id)
+    },
+    makeToast (variant = null, message) {
+      this.$bvToast.toast(message, {
+        title: `Variant ${variant || 'default'}`,
+        variant: variant,
+        autoHideDelay: 5000,
+        solid: true
+      })
+    },
+    checkValidProduct (id, erpNumber) {
+      return this.products_data.some(product => product.id.toString() === id && product.erp_number.toString() === erpNumber)
     }
   }
 }
